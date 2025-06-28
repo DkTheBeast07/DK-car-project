@@ -1,8 +1,14 @@
 from django.shortcuts import render
+from .models import Team
 
 # Home view for the pages app
 def home(request):
-    return render(request, 'pages/home.html')
+    teams = Team.objects.all()
+    data = {
+        'teams' : teams,
+        
+    }
+    return render(request, 'pages/home.html',context=data)
 
 def about(request):
     return render(request, 'pages/about.html')
