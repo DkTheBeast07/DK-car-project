@@ -516,19 +516,19 @@
                                     <div class="car-magnify-gallery">
                                         <a href="img/car/car-1.jpg" class="overlap-btn">
                                             <i class="fa fa-expand"></i>
-                                            <img class="hidden" src="img/car/car-1.jpg">
+                                            <img class="hidden" src="{% static 'img/car/car-1.jpg' %}">
                                         </a>
                                         <a href="img/car/car-2.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-2.jpg">
+                                            <img class="hidden" src="{% static 'img/car/car-2.jpg' %}">
                                         </a>
                                         <a href="img/car/car-3.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-3.jpg">
+                                            <img class="hidden" src="{% static 'img/car/car-3.jpg' %}">
                                         </a>
                                         <a href="img/car/car-4.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-4.jpg">
+                                            <img class="hidden" src="{% static 'img/car/car-4.jpg' %}">
                                         </a>
                                         <a href="img/car/car-5.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-5.jpg">
+                                            <img class="hidden" src="{% static 'img/car/car-5.jpg' %}">
                                         </a>
                                     </div>
                                 </div>
@@ -902,18 +902,17 @@
                     <div class="team-1">
                         <div class="photo">
                             <a href="#">
-                                <img src="{{ team.photo.url }}" alt="{{ team.firstname }}"class="img-fluid">
-                                {% comment %} <img src="{{ team.photo }}" alt="{{ team.firstname }}" class="img-fluid"> {% endcomment %}
+                                <img src="{{ team.photo.url }}" alt="{{ team.firstname }}" class="img-fluid">
                             </a>
                             <div class="social-list clearfix">
-                                <a href="{{ team.facebook_link }}" class="facebook-bg"><i class="fa fa-facebook"></i></a>
-                                <a href="{{ team.twitter_link }}" class="twitter-bg"><i class="fa fa-twitter"></i></a>
-                                <a href="{{ team.googles_plus_link }}" class="google-bg"><i class="fa fa-google"></i></a>
+                                <a href="{{ team.facebook_link }}" target = "_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ team.twitter_link }}" target = "_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ team.googles_plus_link }}" target = "_blank" class="google-bg"><i class="fa fa-google"></i></a>
                             </div>
                         </div>
                         <div class="details">
-                            <h4><a href="team-detail.html">{{ team.firstname }}</a></h4>
-                            <h5>{{ team.position }}</h5>
+                            <h4><a href="team-detail.html">{{ team.firstname }} {{ team.lastname }}</a></h4>
+                            <h5>{{ team.designation }}</h5>
                         </div>
                     </div>
                 </div>
